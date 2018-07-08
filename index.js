@@ -29,5 +29,9 @@ exports.handler = async (event, context, callback) => {
         } 
     }
 
-    callback(null, { body : JSON.stringify(res_body) });
+    callback(null, {
+        "statusCode": 200,
+        "body" : JSON.stringify(res_body)
+        }
+    );
 };
