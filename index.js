@@ -18,14 +18,14 @@ exports.handler = async (event, context, callback) => {
         let data = parse.json(response.data.feeds);
 
         res_body = {
-            data: data,
-            event: JSON.stringify(event)
+            "data": data
         }    
     }
 
     else{
         res_body = {
-            "message": "There was no query parameter passed to the application"
+            "message": "There was no query parameter passed to the application",
+            "event": event
         } 
     }
 
