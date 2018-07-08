@@ -7,14 +7,18 @@ The purpose of this API is to get data from ThingSpeak channels and format it in
 The API responds with the following data
 
 ```
-data = {
-    soil_temp: <Number>,
-    soil_moist: <Number>,
-    temp: <Number>,
-    humidity: <Number>,
-    input_current: <Number>,
-    input_voltage: <Number>,
-    rssi: <Number>,
-    switch: <Number>
-}
+data = [{
+        soil_temp: <Number>,
+        soil_moist: <Number>,
+        temp: <Number>,
+        humidity: <Number>,
+        input_current: <Number>,
+        input_voltage: <Number>,
+        rssi: <Number>,
+        switch: <Number>
+    },
+...
+...
+...
+]
 ```
