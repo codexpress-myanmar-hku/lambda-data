@@ -5,8 +5,8 @@ exports.json = function(d){
             let e = {
                 soil_temp: null,
                 soil_moist: null,
-                temp: d.field1,
-                humidity: d.field2,
+                temp: element.field1,
+                humidity: element.field2,
                 input_current: null,
                 input_voltage: null,
                 rssi: null,
@@ -15,5 +15,5 @@ exports.json = function(d){
             readings.push(e);
         });
     }
-    return JSON.stringify(readings);
+    return readings;
 }
