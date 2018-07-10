@@ -8,17 +8,15 @@ The API responds with the following data
 
 ```
 data = [{
-        soil_temp: <Number>,
-        soil_moist: <Number>,
-        temp: <Number>,
-        humidity: <Number>,
-        input_current: <Number>,
-        input_voltage: <Number>,
-        rssi: <Number>,
-        switch: <Number>
-    },
-...
-...
+    soil_temp: <Number>,
+    soil_moist: <Number>,
+    temp: <Number>,
+    humidity: <Number>,
+    input_current: <Number>,
+    input_voltage: <Number>,
+    rssi: <Number>,
+    switch: <Number>
+}
+```
 ...
 ]
-```
