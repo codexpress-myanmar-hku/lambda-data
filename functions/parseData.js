@@ -10,7 +10,7 @@ exports.json = function(d){
                 input_current: null,
                 input_voltage: null,
                 rssi: null,
-                switch: null
+                sw: null
             };
             readings.push(e);
         });
