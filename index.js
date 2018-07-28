@@ -27,17 +27,12 @@ exports.handler = async (event, context, callback) => {
             "data": data
         };
         
-        
-
-        db.fetchData(DB_URI, function(res){
-            console.log("The response from Mongo", res);
-            callback(null, {
-                "statusCode": 200,
-                "headers": {
-                    "Access-Control-Allow-Origin" : "*"
-                },
-                "body" : JSON.stringify(res_body)
-            });
+        callback(null, {
+            "statusCode": 200,
+            "headers": {
+                "Access-Control-Allow-Origin" : "*"
+            },
+            "body" : JSON.stringify(res_body)
         });
     }
 
