@@ -4,7 +4,7 @@ exports.json = function(d){
     if(d){
         d.forEach(element => {
             let e = {
-                timestamp: new Date(element.created_at).toLocaleString('en-US' , { timeZone : 'Asia/Rangoon' }),
+                timestamp: new Date(element.created_at).toUTCString(),
                 soil_temp: element.field4,
                 soil_moist: element.field3,
                 temp: element.field1,
@@ -16,6 +16,7 @@ exports.json = function(d){
             };
             readings.push(e);
         });
+
         let dateNow = new Date(new Date().toLocaleString('en-US' , { timeZone : 'Asia/Rangoon' })).getDate();
         let monthNow = new Date(new Date().toLocaleString('en-US' , { timeZone : 'Asia/Rangoon' })).getMonth();
         let yearnow = new Date(new Date().toLocaleString('en-US' , { timeZone : 'Asia/Rangoon' })).getFullYear();
@@ -29,5 +30,5 @@ exports.json = function(d){
             }
         }
     }
-    return payload;
+    return readings;
 }

@@ -1,7 +1,6 @@
 let CONFIG = require('./config.json');
 let axios = require('axios');
 let parse = require('./functions/parseData');
-let db = require('./functions/dbConnect');
 
 exports.handler = async (event, context, callback) => {
     
