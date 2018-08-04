@@ -30,5 +30,5 @@ exports.json = function(d){
             }
         }
     }
-    return readings;
+    return payload;
 }

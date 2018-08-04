@@ -9,7 +9,6 @@ exports.handler = async (event, context, callback) => {
     let qs = event.queryStringParameters;
     let res_body = null;
 
-
     if(qs && qs.type=="data"){
         const response = await axios.get(CONFIG.TS_API_GET_URL, {
             params:{
@@ -17,10 +16,17 @@ exports.handler = async (event, context, callback) => {
             }
         });
         
-        
-        let data = parse.json(response.data.feeds);
-        
-        let DB_URI = "mongodb+srv://" + CONFIG.R_DB_USER + ":" + CONFIG.R_DB_PASS + CONFIG.R_DB_URL;
+        let data = [];
+        data.push(parse.json(response.data.feeds));
+
+        for(let i = 0; i<6; i++){
+            const res = await axios.get(CONFIG.API_URL[i], {
+                params:{
+                    api_key: CONFIG.DEVICE_KEY[i]
+                }
+            });
+            data.push(parse.json(res.data.feeds));
+        }
 
         res_body = {
             "data": data
